@@ -2,9 +2,9 @@ language: python
 python:
   - "2.6"
   - "2.7"
-install: null
+install: "null"
 before_script:
-  - wget http://googleappengine.googlecode.com/files/google_appengine_1.7.4.zip -nv
-  - unzip -q google_appengine_1.7.4.zip
+  - wget http://googleappengine.googlecode.com/files/google_appengine_1.8.2.zip
+  - unzip -q google_appengine_1.8.2.zip
   - export GAE_PATH=./google_appengine
 script: tests.sh

@@ -11,6 +11,9 @@ import inspect, os
 from google.appengine.ext import testbed
 from google.appengine.api import memcache
 
+sys.path.insert(1, os.path.join(os.path.abspath('./buster/'), 'lib'))
+sys.path.insert(1, os.path.join(os.path.abspath('./buster')))
+
 import feedparser
 
 RSS_MOCKS = {}
@@ -28,8 +31,6 @@ def fake_parse(url, *args, **kwargs):
 
 feedparser.parse = fake_parse
 
-sys.path.insert(1, os.path.join(os.path.abspath('./buster/'), 'lib'))
-sys.path.insert(1, os.path.join(os.path.abspath('./buster')))
 from agar.test import MockUrlfetchTest
 # from rss_to_adn import Feed
 from application import app
